@@ -1,0 +1,1 @@
+execute if entity @p[nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run tellraw @p ["",{"text":"You have the "},{"text":"Self Slingshot!","italic":true,"color":"aqua"}]
