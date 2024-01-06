@@ -1,0 +1,14 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ride_proj:self-slingshot"
+      }
+    }
+  },
+  "rewards": {
+    "function": "ride_proj:give-slingshot"
+  },
+  "sends_telemetry_event": false
+}
