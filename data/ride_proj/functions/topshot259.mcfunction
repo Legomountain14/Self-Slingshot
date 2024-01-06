@@ -1,5 +1,10 @@
 kill @e[type=arrow,tag=arrow1-topshot259,nbt={inGround:1b}]
 
+
+#kill arrows in water
+execute at @e[type=minecraft:arrow,tag=arrow1-topshot259] if block ~ ~ ~ water run execute as @e[type=minecraft:arrow,tag=arrow1-topshot259] run kill @s
+
+
 # kill other arrows to prevent teleportation:
 execute if entity @e[name="topshot259",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as topshot259 run kill @e[type=minecraft:arrow,nbt={Owner: [I; -1350300206, 2091074257, -1911937549, 440535073],inGround:1b}]
 
