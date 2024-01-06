@@ -1,5 +1,10 @@
 kill @e[type=arrow,tag=arrow1-mavel43,nbt={inGround:1b}]
 
+# kill other arrows to prevent teleportation:
+execute if entity @e[name="mavel43",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as mavel43 run kill @e[type=minecraft:arrow,nbt={Owner: [I; 2055730012, 2048016395, -1790219199, -96384137],inGround:1b}]
+
+
+
 execute if entity @e[name="mavel43",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as mavel43 run tag @e[type=minecraft:arrow,sort=nearest,limit=1,nbt={Owner: [I; 2055730012, 2048016395, -1790219199, -96384137]}] add arrow1-mavel43
 execute if entity @e[name="mavel43",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as mavel43 run ride mavel43 mount @e[type=minecraft:arrow,sort=nearest,limit=1,tag=arrow1-mavel43,nbt={Owner: [I; 2055730012, 2048016395, -1790219199, -96384137]}]
 execute if entity @e[name="mavel43",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as mavel43 run tag @e[type=minecraft:arrow,sort=nearest,limit=1,tag=!arrow1-mavel43] add arrow2-mavel43

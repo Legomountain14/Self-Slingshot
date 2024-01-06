@@ -1,5 +1,10 @@
 kill @e[type=arrow,tag=arrow1-SolidSchmaltz,nbt={inGround:1b}]
 
+# kill other arrows to prevent teleportation:
+execute if entity @e[name="SolidSchmaltz",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as SolidSchmaltz run kill @e[type=minecraft:arrow,nbt={Owner: [I; -367560190, -998814152, -2057205432, 1398135003],inGround:1b}]
+
+
+
 execute if entity @e[name="SolidSchmaltz",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as SolidSchmaltz run tag @e[type=minecraft:arrow,sort=nearest,limit=1,nbt={Owner: [I; -367560190, -998814152, -2057205432, 1398135003]}] add arrow1-SolidSchmaltz
 execute if entity @e[name="SolidSchmaltz",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as SolidSchmaltz run ride SolidSchmaltz mount @e[type=minecraft:arrow,sort=nearest,limit=1,tag=arrow1-SolidSchmaltz,nbt={Owner: [I; -367560190, -998814152, -2057205432, 1398135003]}]
 execute if entity @e[name="SolidSchmaltz",nbt={SelectedItem:{id:"minecraft:bow",tag:{display:{Name:'{"text":"Self Slingshot"}'}}}}] run execute as SolidSchmaltz run tag @e[type=minecraft:arrow,sort=nearest,limit=1,tag=!arrow1-SolidSchmaltz] add arrow2-SolidSchmaltz
